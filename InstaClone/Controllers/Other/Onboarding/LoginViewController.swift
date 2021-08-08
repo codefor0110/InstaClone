@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
         let field = UITextField()
         field.placeholder = "Username or Email..."
         field.returnKeyType = .next
+        field.leftViewMode = .always
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.autocapitalizationType = .none
         field.autocorrectionType = .no
@@ -34,6 +35,7 @@ class LoginViewController: UIViewController {
         let field = UITextField()
         field.placeholder = "Password"
         field.returnKeyType = .continue
+        field.leftViewMode = .always
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.autocapitalizationType = .none
         field.autocorrectionType = .no
@@ -136,18 +138,18 @@ class LoginViewController: UIViewController {
         
         termsButton.frame = CGRect(x: 10,
                                    y: view.height-view.safeAreaInsets.bottom-100,
-                                           width: view.width-20,
-                                           height: 50.0
+                                   width: view.width-20,
+                                   height: 50.0
         )
-
+        
         
         privacyButton.frame = CGRect(x: 10,
                                      y: view.height-view.safeAreaInsets.bottom-50,
-                                             width: view.width-20,
-                                             height: 50.0
-          )
-
-
+                                     width: view.width-20,
+                                     height: 50.0
+        )
+        
+        
         
         configureHeaderView()
         
@@ -184,14 +186,44 @@ class LoginViewController: UIViewController {
     
     
     @objc private func didTapLogin(){
+        
         passwordField.resignFirstResponder()
         usernameEmailField.resignFirstResponder()
-        
+            
         
         guard let userNameField = usernameEmailField.text, !userNameField.isEmpty,
-              let passwordField = passwordField.text, !passwordField.isEmpty, passwordField.count >= 8
+              let passwordFieldText = passwordField.text, !passwordFieldText.isEmpty, passwordFieldText.count >= 8
         else{
             return
+        }
+        
+        
+        
+        var userName: String?
+        var email: String?
+        
+        if userNameField.contains("@"),userNameField.contains("."){
+            email = userNameField
+        }else{
+            userName = userNameField
+        }
+        
+        
+        
+        AuthManager.shared.loginUser(email: email, userName: userName, password: passwordFieldText) {success in
+            
+            DispatchQueue.main.async {
+                if success {
+                    self.dismiss(animated: true, completion: nil)
+                }else{
+                    let alert = UIAlertController(title: "Log in error", message: "We are ubale to log you in", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                    
+                    self.present(alert, animated: true)
+                }
+            }
+            
         }
     }
     
@@ -216,7 +248,9 @@ class LoginViewController: UIViewController {
     
     @objc private func didTapCreateAccount(){
         let vc = RegistratonViewController()
-        present(vc, animated: true)
+        vc.title = "Create Account"
+        
+        present(UINavigationController(rootViewController: vc),animated: true)
     }
     
     
