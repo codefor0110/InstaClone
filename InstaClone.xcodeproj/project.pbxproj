@@ -31,6 +31,10 @@
 		2D22AA4326C02C1500A8C89D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22AA4226C02C1500A8C89D /* AuthManager.swift */; };
 		2D22AA4526C02C3A00A8C89D /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22AA4426C02C3A00A8C89D /* StorageManager.swift */; };
 		2D22AA4726C02F2500A8C89D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22AA4626C02F2500A8C89D /* Extensions.swift */; };
+		2DA10B3B26C12693003602D7 /* IGFeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA10B3A26C12693003602D7 /* IGFeedPostTableViewCell.swift */; };
+		2DA10B3E26C12830003602D7 /* IGFeedPostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA10B3D26C12830003602D7 /* IGFeedPostHeaderTableViewCell.swift */; };
+		2DA10B4026C1284A003602D7 /* IGFeedPostActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA10B3F26C1284A003602D7 /* IGFeedPostActionsTableViewCell.swift */; };
+		2DA10B4226C12864003602D7 /* IGFeedPostGeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA10B4126C12864003602D7 /* IGFeedPostGeneralTableViewCell.swift */; };
 		9934F8A0BB0CDF8552D07BB9 /* Pods_InstaClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D11E03B6406D7998174496 /* Pods_InstaClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +67,10 @@
 		2D22AA4226C02C1500A8C89D /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		2D22AA4426C02C3A00A8C89D /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		2D22AA4626C02F2500A8C89D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2DA10B3A26C12693003602D7 /* IGFeedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostTableViewCell.swift; sourceTree = "<group>"; };
+		2DA10B3D26C12830003602D7 /* IGFeedPostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		2DA10B3F26C1284A003602D7 /* IGFeedPostActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostActionsTableViewCell.swift; sourceTree = "<group>"; };
+		2DA10B4126C12864003602D7 /* IGFeedPostGeneralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostGeneralTableViewCell.swift; sourceTree = "<group>"; };
 		50D11E03B6406D7998174496 /* Pods_InstaClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F247FFCF5DD3F244E2931922 /* Pods-InstaClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaClone.debug.xcconfig"; path = "Target Support Files/Pods-InstaClone/Pods-InstaClone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +137,7 @@
 		2D22AA1926C01D3A00A8C89D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2DA10B3926C1266C003602D7 /* Cells */,
 				2D22AA1C26C01D9700A8C89D /* Storyboards */,
 				2D22AA0C26C01CF300A8C89D /* Assets.xcassets */,
 			);
@@ -208,6 +217,25 @@
 				2D22AA3A26C0224B00A8C89D /* PublishPostViewController.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		2DA10B3926C1266C003602D7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2DA10B3C26C12803003602D7 /* Home Feed */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2DA10B3C26C12803003602D7 /* Home Feed */ = {
+			isa = PBXGroup;
+			children = (
+				2DA10B3A26C12693003602D7 /* IGFeedPostTableViewCell.swift */,
+				2DA10B3D26C12830003602D7 /* IGFeedPostHeaderTableViewCell.swift */,
+				2DA10B3F26C1284A003602D7 /* IGFeedPostActionsTableViewCell.swift */,
+				2DA10B4126C12864003602D7 /* IGFeedPostGeneralTableViewCell.swift */,
+			);
+			path = "Home Feed";
 			sourceTree = "<group>";
 		};
 		A2DCE33EBA9B94B45627350F /* Pods */ = {
@@ -334,6 +362,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA10B3E26C12830003602D7 /* IGFeedPostHeaderTableViewCell.swift in Sources */,
+				2DA10B4026C1284A003602D7 /* IGFeedPostActionsTableViewCell.swift in Sources */,
+				2DA10B4226C12864003602D7 /* IGFeedPostGeneralTableViewCell.swift in Sources */,
 				2D22AA2F26C021D300A8C89D /* EditProfileViewController.swift in Sources */,
 				2D22AA4326C02C1500A8C89D /* AuthManager.swift in Sources */,
 				2D22AA1E26C01DFA00A8C89D /* ExploreViewController.swift in Sources */,
@@ -349,6 +380,7 @@
 				2D22AA2926C01ED500A8C89D /* LoginViewController.swift in Sources */,
 				2D22AA3526C021FA00A8C89D /* SearchViewController.swift in Sources */,
 				2D22AA2426C01E4300A8C89D /* ProfileViewController.swift in Sources */,
+				2DA10B3B26C12693003602D7 /* IGFeedPostTableViewCell.swift in Sources */,
 				2D22AA4726C02F2500A8C89D /* Extensions.swift in Sources */,
 				2D22AA0426C01CEA00A8C89D /* AppDelegate.swift in Sources */,
 				2D22AA0626C01CEA00A8C89D /* SceneDelegate.swift in Sources */,
