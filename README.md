@@ -1,3 +1,3 @@
 # InstaClone
 
-A Clone of Instagram Mobile Application using Swoft & Storyboard
+A Clone of Instagram Mobile Application using Swift & Storyboard
